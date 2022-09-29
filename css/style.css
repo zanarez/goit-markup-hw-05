@@ -113,6 +113,8 @@ a {
   color: var(--primary-white-color);
 }
 
+
+
 /* site nav */
 
 .site-nav {
@@ -121,14 +123,18 @@ a {
 
 .site-nav .link {
   color: var(--title-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-nav .mail,
 .contacts-nav .phone,
 .site-nav .link {
+  display: flex;
   padding-bottom: 32px;
   padding-top: 32px;
 }
+
+
 
 /* site+contacts nav */
 
@@ -139,12 +145,29 @@ a {
 .contacts-nav .phone:hover,
 .contacts-nav .phone:focus {
   color: var(--accent-color);
+  
 }
 
 .site-nav,
 .contacts-nav {
   font-weight: 500;
   letter-spacing: 0.02em;
+}
+
+.site-nav .header-item {
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent-color);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /*contacts nav*/
@@ -160,6 +183,7 @@ a {
 .contacts-nav .mail,
 .contacts-nav .phone {
   color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail {
@@ -399,16 +423,20 @@ a {
   align-items: center;
   justify-content: center;
   color: var(--icon-color);
+  
 }
 
 .team-social-icon {
   fill: currentColor;
+  
 }
 
 .team-social-link:hover,
 .team-social-link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 /*.team-social-link:hover .team-social-icon,
@@ -463,12 +491,15 @@ a {
 
 .clients-icon {
   fill: currentColor;
+  
 }
 
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /*footer*/
@@ -504,6 +535,7 @@ a {
 .section-footer .phone:hover,
 .section-footer .phone:focus {
   color: var(--accent-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer {
@@ -547,6 +579,7 @@ a {
 .social-item:hover .social-link,
 .social-item .social-link:focus {
   background-color: var(--accent-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*portfolio*/
@@ -562,31 +595,6 @@ a {
 
 .portpholio-nav > .nav-btn:not(:last-child) {
   margin-right: 8px;
-}
-
-.card-set {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: calc(-1 * var(--card-set-gap));
-  margin-top: calc(-1 * var(--card-set-gap));
-}
-
-.card-set > .item {
-  border: 1px solid #eeeeee;
-  box-sizing: border-box;
-  flex-basis: calc(100% / 3 - var(--card-set-gap));
-  margin-left: var(--card-set-gap);
-  margin-top: var(--card-set-gap);
-}
-
-.card-set .link:hover,
-.card-set .link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.card-content {
-  padding: 20px 24px;
 }
 
 .secondary-button {
@@ -614,6 +622,32 @@ a {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
+}
+
+.card-set > .item {
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+}
+
+.card-set .link:hover,
+.card-set .link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.card-content {
+  padding: 20px 24px;
+  border: 1px solid rgba(238, 238, 238, 1);
+}
+
 .card-set .link {
   display: block;
   color: var(--primary-text-color);
@@ -632,3 +666,34 @@ a {
   line-height: 2;
   letter-spacing: 0.06em;
 }
+
+.card-set .card-img {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card .card-img-text {
+  background: rgba(33, 150, 243, 0.9);
+  color: var(--primary-white-color);
+  font-style: normal;
+  line-height: 28px;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  padding: 63px 24px;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.card-set > .item:hover .card-img-text {
+  transform: translateY(0);
+}
+
+
