@@ -134,6 +134,7 @@ a {
 
 /* site+contacts nav */
 
+.site-nav .current,
 .site-nav .link:hover,
 .site-nav .link:focus,
 .contacts-nav .mail:hover,
@@ -158,7 +159,7 @@ a {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 
   position: absolute;
   bottom: 0;
@@ -357,11 +358,12 @@ a {
 
   display: flex;
   width: 100%;
+  height: 70px;
   justify-content: center;
+  align-items: center;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
-  padding: 27px;
 
   color: var(--primary-white-color);
 }
@@ -415,6 +417,7 @@ a {
   align-items: center;
   justify-content: center;
   color: var(--icon-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-icon {
@@ -425,7 +428,6 @@ a {
 .team-social-link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*.team-social-link:hover .team-social-icon,
@@ -476,6 +478,7 @@ a {
   align-items: center;
   justify-content: center;
   color: var(--icon-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon {
@@ -486,7 +489,6 @@ a {
 .clients-link:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*footer*/
@@ -506,6 +508,7 @@ a {
 
 .address {
   color: var(--primary-white-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-footer .mail,
@@ -513,6 +516,7 @@ a {
   display: block;
 
   color: var(--adrress-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address:hover,
@@ -522,7 +526,6 @@ a {
 .section-footer .phone:hover,
 .section-footer .phone:focus {
   color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer {
@@ -557,6 +560,7 @@ a {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon {
@@ -566,7 +570,6 @@ a {
 .social-item:hover .social-link,
 .social-item .social-link:focus {
   background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*portfolio*/
@@ -582,6 +585,17 @@ a {
 
 .portpholio-nav > .nav-btn:not(:last-child) {
   margin-right: 8px;
+}
+
+.portpholio-nav .btn:hover,
+.portpholio-nav .btn:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+.portpholio-nav .btn {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .secondary-button {
@@ -605,8 +619,25 @@ a {
 .secondary-button:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.special-button,
+.special-button:hover,
+.special-button:focus {
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.03em;
+  cursor: pointer;
 }
 
 .card-set {
@@ -630,16 +661,17 @@ a {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card-content {
-  padding: 20px 24px;
-  border: 1px solid rgba(238, 238, 238, 1);
-}
-
 .card-set .link {
   display: block;
   color: var(--primary-text-color);
   font-size: 14px;
   line-height: 1.14;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-content {
+  padding: 20px 24px;
+  border: 1px solid rgba(238, 238, 238, 1);
 }
 
 .link-title {
@@ -652,6 +684,16 @@ a {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+}
+
+.card-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
 }
 
 .card-set .card-img {
